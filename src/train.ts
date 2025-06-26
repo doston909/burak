@@ -1,10 +1,25 @@
+// H2-TASK
+
+function getDigits(soz: string) {
+    const soz1 = soz.split('');
+    const soz2 = soz1.filter(x => !isNaN(Number(x))).join('');
+    console.log(soz2);
+
+    }
+    getDigits('sa4lo8m7nh5');
+
+
+
+
+
+
 // H-TASK
 
-function getPositive(integ: number[]) {
-    const positive = integ.filter(x => x > 0);
-    console.log("Berilgan array ichidagi musbat sonlar:", positive.join(''));
-}
-getPositive([-45,6,0,8,-4]);
+// function getPositive(integ: number[]) {
+//     const positive = integ.filter(x => x > 0);
+//     console.log("Berilgan array ichidagi musbat sonlar:", positive.join(''));
+// }
+// getPositive([-45,6,0,8,-4]);
 
 
 
