@@ -1,12 +1,33 @@
+/*
+Project Standards:
+-Logging standards
+-Naming standards:
+    function, method, variable => CAMEL
+    class => PASCAL
+    folder => KEBAB
+    css => SNAKE
+    
+- Error handling
+
+
+*/ 
+
+
+
+
+
+
+
+
 // H2-TASK
 
-function getDigits(soz: string) {
-    const soz1 = soz.split('');
-    const soz2 = soz1.filter(x => !isNaN(Number(x))).join('');
-    console.log(soz2);
+// function getDigits(soz: string) {
+//     const soz1 = soz.split('');
+//     const soz2 = soz1.filter(x => !isNaN(Number(x))).join('');
+//     console.log(soz2);
 
-    }
-    getDigits('sa4lo8m7nh5');
+//     }
+//     getDigits('sa4lo8m7nh5');
 
 
 
