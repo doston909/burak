@@ -4,9 +4,9 @@ Project Standards:
 -Naming standards:
     function, method, variable => CAMEL
     class => PASCAL
-    folder => KEBAB
+    folder, file => KEBAB
     css => SNAKE
-    
+
 - Error handling
 
 
