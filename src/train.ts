@@ -9,8 +9,13 @@ Project Standards:
 
 - Error handling
 
-
 */ 
+
+/** 
+   Traditional Api
+    Rest Api
+    GraphQL Api
+ */
 
 
 
