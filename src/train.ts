@@ -17,27 +17,54 @@ Project Standards:
     GraphQL Api
  */
 
+
+
+// J-TASK
+
+function findLongestWord(matn3: string) {
+    const matn4 = matn3.split(" ");
+
+    let uzunSoz = "";
+
+    for (let soz of matn4) {
+        if (soz.length > uzunSoz.length) {
+            uzunSoz = soz;
+        }
+    }
+
+    console.log("Eng uzun so'z: ", uzunSoz);
+}
+findLongestWord("Salom men Dostonbek");
+
+
+
+
+
+
+
+
+
 // I-TASK
 
-function majorityElement(arr: number[]): number | null {
-  const map = new Map<number, number>();
-  let maxCount = 0;
-  let maxNumber: number | null = null;
+// function majorityElement(arr: number[]): number | null {
+//   const map = new Map<number, number>();
+//   let maxCount = 0;
+//   let maxNumber: number | null = null;
 
-  for (let num of arr) {
-    let count = map.get(num) || 0;
-    count++;
-    map.set(num, count);
+//   for (let num of arr) {
+//     let count = map.get(num) || 0;
+//     count++;
+//     map.set(num, count);
 
-    if (count > maxCount) {
-      maxCount = count;
-      maxNumber = num;
-    }
-  }
+//     if (count > maxCount) {
+//       maxCount = count;
+//       maxNumber = num;
+//     }
+//   }
 
-  return maxNumber;
-}
-console.log(majorityElement([5,7,4,3,5,8,56,4,2,3,5,5,5,56,3]));
+//   return maxNumber;
+// }
+// console.log(majorityElement([5,7,4,3,5,8,56,4,2,3,5,5,5,56,3]));
 
 
 
