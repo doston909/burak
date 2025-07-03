@@ -18,6 +18,11 @@ Project Standards:
  */
 
 
+/* 
+    Traditional FD => BSSR (Admin) => EJS
+    Modern FD      => SPA (User's applications) => REACT
+ */
+
 
 // J-TASK
 
@@ -35,7 +40,6 @@ function findLongestWord(matn3: string) {
     console.log("Eng uzun so'z: ", uzunSoz);
 }
 findLongestWord("Salom men Dostonbek");
-
 
 
 
