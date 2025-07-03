@@ -24,28 +24,39 @@ Project Standards:
  */
 
 
-// J-TASK
+// K-TASK
 
-function findLongestWord(matn3: string) {
-    const matn4 = matn3.split(" ");
-
-    let uzunSoz = "";
-
-    for (let soz of matn4) {
-        if (soz.length > uzunSoz.length) {
-            uzunSoz = soz;
+function countVowels(soz: string) {
+    const unlilar = "aoueiAOUEI";
+    let unli = 0;
+    
+    for ( let harf of soz) {
+        if (unlilar.includes(harf)) {
+            unli++;
         }
     }
-
-    console.log("Eng uzun so'z: ", uzunSoz);
+    console.log("Unli harflar:", unli);
 }
-findLongestWord("Salom men Dostonbek");
+
+countVowels("Anjanliklarkeldi");
 
 
+// J-TASK
 
+// function findLongestWord(matn3: string) {
+//     const matn4 = matn3.split(" ");
 
+//     let uzunSoz = "";
 
+//     for (let soz of matn4) {
+//         if (soz.length > uzunSoz.length) {
+//             uzunSoz = soz;
+//         }
+//     }
 
+//     console.log("Eng uzun so'z: ", uzunSoz);
+// }
+// findLongestWord("Salom men Dostonbek");
 
 
 // I-TASK
