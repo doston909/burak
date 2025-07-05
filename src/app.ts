@@ -26,7 +26,7 @@ app.use(
     session({
       secret: String(process.env.SESSION_SECRET), // secretni env dan olib keldik
       cookie: {
-        maxAge: 1000 * 3600 * 3 // bu yerda cookie livetime 3 soat qilib belgiladik
+        maxAge: 1000 * 60 * 60 * 3 // bu yerda cookie livetime 3 soat qilib belgiladik
       },
       store: store,  // bu yerda session lar session collection ga yozilsin deb belgiladik 
       resave: true,  // bu yerda cookie livetime ni ohirgi kirgan vaqtidan yangilansin deb belgiladik
