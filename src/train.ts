@@ -23,22 +23,29 @@ Project Standards:
     Modern FD      => SPA (User's applications) => REACT
  */
 
+// L-TASK 
+
+function reverseSentence (soz: string) {
+    return soz.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+};
+
+console.log(reverseSentence("no pain no gain"));
 
 // K-TASK
 
-function countVowels(soz: string) {
-    const unlilar = "aoueiAOUEI";
-    let unli = 0;
+// function countVowels(soz: string) {
+//     const unlilar = "aoueiAOUEI";
+//     let unli = 0;
     
-    for ( let harf of soz) {
-        if (unlilar.includes(harf)) {
-            unli++;
-        }
-    }
-    console.log("Unli harflar:", unli);
-}
+//     for ( let harf of soz) {
+//         if (unlilar.includes(harf)) {
+//             unli++;
+//         }
+//     }
+//     console.log("Unli harflar:", unli);
+// }
 
-countVowels("Anjanliklarkeldi");
+// countVowels("Anjanliklarkeldi");
 
 
 // J-TASK
