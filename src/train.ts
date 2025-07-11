@@ -23,13 +23,38 @@ Project Standards:
     Modern FD      => SPA (User's applications) => REACT
  */
 
-// L-TASK 
+/*
+    Validation:
+    Frontend validation
+    Backend validation
+    Database validation
+ */
 
-function reverseSentence (soz: string) {
-    return soz.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+// M-TASK
+function getSquareNumbers(numbers: number[]) {
+     for (let num of numbers) {
+        const number2 = num * num;
+        console.log(`${num} ning kvadrati ${number2} ga teng`);
+    };  
 };
 
-console.log(reverseSentence("no pain no gain"));
+getSquareNumbers([3, 4, 5]);
+
+// const numbers1 = numbers.map(n => n * n);
+    // console.log(`${numbers} ning kvadrati ${numbers1}ga teng`)
+
+
+
+
+
+
+// L-TASK 
+
+// function reverseSentence (soz: string) {
+//     return soz.split(" ").map(word => word.split("").reverse().join("")).join(" ");
+// };
+
+// console.log(reverseSentence("no pain no gain"));
 
 // K-TASK
 
