@@ -33,7 +33,7 @@ routerAdmin.post(
 routerAdmin.post(
     "/product/:id", 
     restaurantController.verifyRestaurant,
-    productController.updatedChosenProduct
+    productController.updateChosenProduct
 );
 /** User **/
 export default routerAdmin;

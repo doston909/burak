@@ -15,6 +15,7 @@ const store = new MongoDBStore({
     collection: "sessions", // bu yerda database da sessions degan collection ochdik
 });
 
+
 /** 1.ENTRANCE **/
 const app = express();
 app.use(express.static(path.join(__dirname, 'public')));

@@ -1,8 +1,9 @@
 import { HttpCode } from "../libs/Errors";
-import { Product, ProductInput } from "../libs/types/product";
+import { Product, ProductInput, ProductUpdateInput } from "../libs/types/product";
 import ProductModel from "../schema/Product.model";
 import { Message } from "../libs/Errors";
 import Errors from "../libs/Errors";
+import { shapeIntoMongooseObjectId } from "../libs/config";
 
 class ProductService {
     private readonly productModel;
@@ -12,6 +13,7 @@ class ProductService {
  }
 
  /** SPA */
+
  /** SSR */
 
  public async createNewProduct(input: ProductInput): Promise<Product> {
@@ -22,6 +24,21 @@ class ProductService {
         throw new Errors(HttpCode.BAD_REQUEST, Message.BAD_REQUEST);
     }
  }
+
+
+ public async updateChosenProduct(
+    id: string,
+    input: ProductUpdateInput
+): Promise<Product> {
+    id = shapeIntoMongooseObjectId(id);
+    const result = await this.productModel.findOneAndUpdate({ _id: id }, input, { new: true }).exec();
+    if(!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
+
+    console.log("result:", result);
+    return result;
+}
 };
 
 export default ProductService;
+
+
