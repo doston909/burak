@@ -1,13 +1,17 @@
 import { Request, Response } from "express";
-import Errors from "../libs/Errors";
+import Errors, { HttpCode, Message } from "../libs/Errors";
 import { T } from "../libs/types/common";
 import ProductService from "../models/Product.service";
+import { ProductInput } from "../libs/types/product";
 import { AdminRequest } from "../libs/types/member";
 
 
 const productService = new ProductService();
 
 const productController: T = {};
+/** SPA */
+
+/** SSR */
 productController.getAllProducts = async (req: Request, res: Response) => {
     try {
       console.log('getAllProducts');
@@ -19,16 +23,28 @@ productController.getAllProducts = async (req: Request, res: Response) => {
     }  
 };
 
-productController.createNewProducts = async (req: Request, res: Response) => {
+productController.createNewProducts = async ( req: AdminRequest, res: Response) => {
     try {
       console.log('createNewProducts');
-      res.send("DONE!");
+
+      if(!req.files?.length) 
+        throw new Errors(HttpCode.INTERNAL_SERVER_ERROR, Message.CREATE_FAILED);
+
+      const data: ProductInput = req.body;
+      data.productImages = req.files?.map((ele) => {
+        return ele.path.replace(/\\/g, "/");
+      });
+
+      await productService.createNewProduct(data);
+
+      res.send(`<script> alert("Successful creation!"); window.location.replace('admin/product/all') </script>`);
     } catch (err) {
       console.log("Error, createNewProducts:", err);
-      if(err instanceof Errors) res.status(err.code).json(err);
-      else res.status(Errors.standard.code).json(Errors.standard);
-    }  
-};
+      const message = 
+      err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
+       res.send(`<script> alert("${message}"); window.location.replace('admin/product/all') </script>`);
+    }
+  };
 
 productController.updatedChosenProduct = async (req: Request, res: Response) => {
     try {
@@ -36,9 +52,12 @@ productController.updatedChosenProduct = async (req: Request, res: Response) => 
       res.send("DONE!");
     } catch (err) {
       console.log("Error, updatedChosenProducts:", err);
-      if(err instanceof Errors) res.status(err.code).json(err);
-      else res.status(Errors.standard.code).json(Errors.standard);
+      
     }  
-};
+  };
 
 export default productController;
+
+function ele(value: File, index: number, array: File[]): string {
+  throw new Error("Function not implemented.");
+}
