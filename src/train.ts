@@ -30,15 +30,23 @@ Project Standards:
     Database validation
  */
 
-// M-TASK
-function getSquareNumbers(numbers: number[]) {
-     for (let num of numbers) {
-        const number2 = num * num;
-        console.log(`${num} ning kvadrati ${number2} ga teng`);
-    };  
+// N-TASK 
+function palindromCheck(palin: string) {
+    const palin1 = palin.split('').reverse().join('');
+    return palin === palin1;
 };
 
-getSquareNumbers([3, 4, 5]);
+console.log(palindromCheck('non'));
+
+// M-TASK
+// function getSquareNumbers(numbers: number[]) {
+//      for (let num of numbers) {
+//         const number2 = num * num;
+//         console.log(`${num} ning kvadrati ${number2} ga teng`);
+//     };  
+// };
+
+// getSquareNumbers([3, 4, 5]);
 
 // const numbers1 = numbers.map(n => n * n);
     // console.log(`${numbers} ning kvadrati ${numbers1}ga teng`)
